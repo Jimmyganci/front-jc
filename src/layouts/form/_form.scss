@@ -1,0 +1,48 @@
+.form {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40vw;
+  &__inpt {
+    text-align: center;
+    padding: 0.7em 2.2em;
+    width: 100%;
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
+    box-shadow: $inner-shadow;
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+    outline: none;
+
+    &::placeholder {
+      color: var(--greyLight-3);
+    }
+  }
+
+  &__btn {
+    width: 50%;
+    padding: 1em 1.5em;
+    border-radius: 0.6rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+    color: $color-shadow;
+    text-shadow: 1px 1px 1px $color-white;
+
+    &:hover {
+      color: var(--primary-light);
+    }
+    &:active {
+      box-shadow: $inner-shadow;
+    }
+  }
+}

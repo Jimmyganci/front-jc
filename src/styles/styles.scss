@@ -1,1 +1,5 @@
-@import "./navBar";
+@import "settings";
+@import "../navBar/navBar";
+@import "app";
+@import "../login/landingPage";
+@import "../layouts/form/form";
