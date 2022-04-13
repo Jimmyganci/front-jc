@@ -28,5 +28,6 @@ module.exports = {
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
+    "react/jsx-props-no-spreading": 0,
   },
 };
