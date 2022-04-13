@@ -1,9 +1,10 @@
-import NavBar from "./components/NavBar";
+import LandingPage from "./login/LandingPage";
+import "./styles/_app.scss";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
+    <div className="app">
+      <LandingPage />
     </div>
   );
 }
