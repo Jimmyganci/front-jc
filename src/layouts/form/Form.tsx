@@ -15,18 +15,18 @@ function Form({ dataForm }: { dataForm: TypeData }) {
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
       {dataForm.map((form) => (
-        <div key={form.name}>
+        <div className="form__inputContainer" key={form.name}>
           {/* include validation with required or other standard HTML validation rules */}
           <input
             autoComplete="off"
             type={form.name}
-            className="form__inpt"
+            className="form__inputContainer--inpt"
             placeholder={form.placeHolder}
             {...register(form.name as any, { required: form.required })}
           />
           {/* errors will return when field validation fails with the keys of object errors compared to the name  */}
           {Object.keys(errors).includes(form.name) && (
-            <span>{form.messageError}</span>
+            <p className="form__inputContainer--error">{form.messageError}</p>
           )}
         </div>
       ))}
