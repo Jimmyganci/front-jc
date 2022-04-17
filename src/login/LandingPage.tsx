@@ -1,6 +1,6 @@
 import Form from "../layouts/form/Form";
 import formLogin from "./loginData";
-import auth from "../api/requests";
+import { auth } from "../api/requests";
 
 function LandingPage() {
   return (
