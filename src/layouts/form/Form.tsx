@@ -4,13 +4,21 @@ import { TypeFormLogin, TypeInputLogin } from "../../types/types";
 type TypeForm = TypeInputLogin;
 type TypeData = TypeFormLogin[];
 
-function Form({ dataForm }: { dataForm: TypeData }) {
+function Form({
+  dataForm,
+  onSubmitRequest,
+}: {
+  dataForm: TypeData;
+  onSubmitRequest: Function;
+}) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TypeForm>();
-  const onSubmit: SubmitHandler<TypeForm> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<TypeForm> = (data) =>
+    onSubmitRequest(data).then((res: any) => console.log(res));
+
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
