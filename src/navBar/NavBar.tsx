@@ -1,10 +1,8 @@
-// import "../styles/_navBar.scss";
-
 function NavBar() {
   return (
-    <div className="navBar">
-      <h1>NavBar</h1>
-    </div>
+    <nav className="navBar">
+      <h1>navbar</h1>
+    </nav>
   );
 }
 

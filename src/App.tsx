@@ -3,7 +3,7 @@ import "./styles/_app.scss";
 
 function App() {
   return (
-    <div className="app">
+    <div className="relative">
       <LandingPage />
     </div>
   );
