@@ -1,10 +1,7 @@
 import axios from "axios";
 import { TypeInputLogin } from "../types/types";
 
-const API_URL =
-  import.meta.env.VITE_ENV === "dev"
-    ? "http://localhost:1234"
-    : "https://api-jc.herokuapp.com";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:1234";
 
 const auth = {
   loggedIn: ({ email, password }: TypeInputLogin): Promise<TypeInputLogin> => {
