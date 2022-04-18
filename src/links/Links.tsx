@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import Link from "./Link";
 import { links } from "../api/requests";
 import { TypeLink } from "../types/types";
@@ -26,7 +27,11 @@ function Links() {
   }, []);
 
   return (
-    <div>
+    <div className="links">
+      <h1>My Links</h1>
+      <NavLink className="links__newLink neumOutset" to="/admin/links/newLink">
+        Add new link
+      </NavLink>
       {linksList &&
         linksList.map((link) => (
           <Link key={link.id} {...link} onUpdate={updateLink} />

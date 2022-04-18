@@ -8,6 +8,7 @@ function LandingPage() {
       <h1>Welcome</h1>
       <Form
         onSubmitRequest={auth.loggedIn}
+        className="form"
         dataForm={formLogin}
         urlDestination="/admin/home"
       />

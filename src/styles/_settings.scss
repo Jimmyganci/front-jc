@@ -57,3 +57,9 @@ $color-white: #fff;
 img {
   width: 100%;
 }
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: $color-shadow;
+  text-shadow: 1px 1px 1px $color-white;
+}
