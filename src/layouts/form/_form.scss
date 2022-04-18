@@ -7,24 +7,6 @@
   &__inputContainer {
     width: 100%;
     margin-bottom: 1em;
-    &--inpt {
-      text-align: center;
-      padding: 0.7em 2.2em;
-      width: 100%;
-
-      border: none;
-      border-radius: 0.6rem;
-      font-size: 1.2rem;
-      box-shadow: $inner-shadow;
-      background: none;
-      font-family: inherit;
-      color: var(--greyDark);
-      outline: none;
-
-      &::placeholder {
-        color: var(--greyLight-3);
-      }
-    }
     &--error {
       color: red;
       width: 100%;
