@@ -9,3 +9,10 @@ export type TypeFormLogin = {
   messageError: string;
   placeHolder: string;
 };
+
+export type TypeLink = {
+  id: number;
+  title: string;
+  url: string;
+  idTheme: number;
+};

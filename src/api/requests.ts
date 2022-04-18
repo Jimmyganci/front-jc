@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TypeInputLogin } from "../types/types";
+import { TypeInputLogin, TypeLink } from "../types/types";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:1234";
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -22,7 +22,8 @@ export const auth = {
 };
 
 export const links = {
-  getAllLinks: () => axios.get(`${API_URL}/links?API_KEY=${API_KEY}`),
+  getAllLinks: (): Promise<TypeLink[]> =>
+    axios.get(`${API_URL}/links?API_KEY=${API_KEY}`).then((res) => res.data),
 };
 
 export default API_URL;

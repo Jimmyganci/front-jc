@@ -1,7 +1,16 @@
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <nav className="navBar">
-      <h1>navbar</h1>
+      <ul>
+        <li>
+          <Link to="/admin/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/admin/links">Links</Link>
+        </li>
+      </ul>
     </nav>
   );
 }
