@@ -10,7 +10,7 @@ function Input({
 }: TypeInput) {
   return (
     // include validation with required or other standard HTML validation rules
-    <div>
+    <div className="inputMap">
       {type !== "select" && (
         <input
           autoComplete="off"
@@ -21,13 +21,18 @@ function Input({
         />
       )}
       {type === "select" && (
-        <select name={name} {...register(name as any, { required })}>
+        <select
+          className="select"
+          name={name}
+          {...register(name as any, { required })}
+        >
           <option value="">Select your theme</option>
-          {selectData.map((data: TypeTheme) => (
-            <option key={data.id} value={data.id}>
-              {data.name}
-            </option>
-          ))}
+          {selectData &&
+            selectData.map((data: TypeTheme) => (
+              <option key={data.id} value={data.id}>
+                {data.name}
+              </option>
+            ))}
         </select>
       )}
     </div>
