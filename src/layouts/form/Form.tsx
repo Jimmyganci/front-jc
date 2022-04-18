@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { TypeFormLogin, TypeInputLogin } from "../../types/types";
 
 type TypeForm = TypeInputLogin;
@@ -7,17 +8,22 @@ type TypeData = TypeFormLogin[];
 function Form({
   dataForm,
   onSubmitRequest,
+  urlDestination,
 }: {
   dataForm: TypeData;
   onSubmitRequest: Function;
+  urlDestination: string;
 }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TypeForm>();
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<TypeForm> = (data) =>
-    onSubmitRequest(data).then((res: any) => console.log(res));
+    onSubmitRequest(data).then(
+      (res: any) => res.status === 200 && navigate(urlDestination)
+    );
 
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
