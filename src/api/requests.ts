@@ -27,7 +27,7 @@ export const links = {
   updateLink: (id: number, data: TypeLink) =>
     axios
       .put(`${API_URL}/links/${id}?API_KEY=${API_KEY}`, { ...data })
-      .then((res: any) => res.data),
+      .then((res: any) => res),
 };
 
 export const themes = {
