@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Dispatch from "./dispatch/Dispatch";
 import Home from "./home/Home";
-import Links from "./links/Links";
+import Links from "./Links/Links";
 import LandingPage from "./login/LandingPage";
 import "./styles/_app.scss";
 
