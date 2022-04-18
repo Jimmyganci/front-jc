@@ -1,0 +1,9 @@
+.input {
+  text-align: center;
+  padding: 0.7em 2.2em;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--greyLight-3);
+  }
+}
