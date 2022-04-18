@@ -1,7 +1,9 @@
 import axios from "axios";
 import { TypeInputLogin, TypeLink, TypeTheme } from "../types/types";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:1234";
+const API_URL = import.meta.env.DEV
+  ? "http://localhost:1234"
+  : "https://api-jc.herokuapp.com";
 const API_KEY = import.meta.env.VITE_API_KEY;
 console.log(API_URL);
 
