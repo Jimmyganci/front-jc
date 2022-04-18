@@ -6,7 +6,11 @@ function LandingPage() {
   return (
     <div className="landingPage">
       <h1>Welcome</h1>
-      <Form onSubmitRequest={auth.loggedIn} dataForm={formLogin} />
+      <Form
+        onSubmitRequest={auth.loggedIn}
+        dataForm={formLogin}
+        urlDestination="/admin/home"
+      />
     </div>
   );
 }

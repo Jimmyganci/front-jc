@@ -18,7 +18,7 @@ export const auth = {
           withCredentials: true,
         }
       )
-      .then((res) => res.data),
+      .then((res: any) => res),
 };
 
 export const links = {
