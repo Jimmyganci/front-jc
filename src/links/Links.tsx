@@ -15,11 +15,16 @@ function Links() {
     const linkUpdated = await links.updateLink(id, {
       ...data,
     });
-    return linkUpdated;
+    return (
+      linkUpdated.status === 200 &&
+      setLinksLists(linksList.filter((link) => link.id !== id))
+    );
   };
+
   useEffect(() => {
     getLinks();
   }, []);
+
   return (
     <div>
       {linksList &&
