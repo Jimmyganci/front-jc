@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { themes } from "../api/requests";
 import { TypeLink, TypeTheme } from "../types/types";
 import bin from "../assets/icons/bin.png";
@@ -46,6 +47,14 @@ function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
           >
             <img src={bin} alt="bin" />
           </button>
+          <div>
+            <NavLink
+              className="link__edit neumOutset"
+              to={`/admin/links/${id}`}
+            >
+              Edit
+            </NavLink>
+          </div>
         </div>
       )}
     </Suspense>

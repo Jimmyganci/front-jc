@@ -17,6 +17,7 @@ export type TypeInput = {
   name: string;
   required: boolean;
   register: any;
+  selectData: any;
 };
 
 export type TypeLink = {
