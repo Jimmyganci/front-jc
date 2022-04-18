@@ -1,0 +1,15 @@
+.link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 70%;
+  padding: 1.3em;
+  margin: 1em auto;
+
+  button {
+    padding: 1em;
+    width: 50px;
+  }
+}

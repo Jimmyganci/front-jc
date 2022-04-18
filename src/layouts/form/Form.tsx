@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { TypeFormLogin, TypeInputLogin } from "../../types/types";
+import Input from "../input/Input";
 
 type TypeForm = TypeInputLogin;
 type TypeData = TypeFormLogin[];
@@ -30,14 +31,7 @@ function Form({
       {/* register your input into the hook by invoking the "register" function */}
       {dataForm.map((form) => (
         <div className="form__inputContainer" key={form.name}>
-          {/* include validation with required or other standard HTML validation rules */}
-          <input
-            autoComplete="off"
-            type={form.name}
-            className="form__inputContainer--inpt"
-            placeholder={form.placeHolder}
-            {...register(form.name as any, { required: form.required })}
-          />
+          <Input {...form} register={register} />
           {/* errors will return when field validation fails with the keys of object errors compared to the name  */}
           {Object.keys(errors).includes(form.name) && (
             <p className="form__inputContainer--error">{form.messageError}</p>

@@ -21,3 +21,39 @@ $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
   inset -0.2rem -0.2rem 0.5rem var(--white);
 $color-shadow: #babecc;
 $color-white: #fff;
+
+.neumInset {
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  box-shadow: $inner-shadow;
+  background: none;
+  font-family: inherit;
+  color: var(--greyDark);
+  outline: none;
+}
+
+.neumOutset {
+  border-radius: 0.6rem;
+  box-shadow: $shadow;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+  color: $color-shadow;
+  text-shadow: 1px 1px 1px $color-white;
+
+  &:hover {
+    color: var(--primary-light);
+  }
+  &:active {
+    box-shadow: $inner-shadow;
+  }
+}
+
+img {
+  width: 100%;
+}
