@@ -2,7 +2,6 @@ import { Suspense, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { themes } from "../api/requests";
 import { TypeLink, TypeTheme } from "../types/types";
-import bin from "../assets/icons/bin.png";
 
 type LinkProps = {
   id: number;
@@ -26,37 +25,32 @@ function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
   }, [idTheme]);
   return (
     <Suspense fallback="Wait">
-      {active && (
-        <div key={id} className="link neumInset">
-          <p>{id}</p>
-          <p>{title}</p>
-          <p>{url}</p>
-          {theme && <p>{theme.name}</p>}
-          <button
-            onClick={() =>
-              onUpdate(id, {
-                id,
-                title,
-                url,
-                idTheme,
-                active: false,
-              })
-            }
-            type="button"
-            className="neumOutset"
-          >
-            <img src={bin} alt="bin" />
-          </button>
-          <div>
-            <NavLink
-              className="link__edit neumOutset"
-              to={`/admin/links/${id}`}
-            >
-              Edit
-            </NavLink>
-          </div>
+      <div key={id} className="link neumInset">
+        <p>{id}</p>
+        <p>{title}</p>
+        <p>{url}</p>
+        {theme && <p>{theme.name}</p>}
+        <button
+          onClick={() =>
+            onUpdate(id, {
+              id,
+              title,
+              url,
+              idTheme,
+              active: !active,
+            })
+          }
+          type="button"
+          className={`neumOutset ${active ? "validBg" : "errorBg"}`}
+        >
+          {active ? "ON" : "OFF"}
+        </button>
+        <div>
+          <NavLink className="link__edit neumOutset" to={`/admin/links/${id}`}>
+            Edit
+          </NavLink>
         </div>
-      )}
+      </div>
     </Suspense>
   );
 }
