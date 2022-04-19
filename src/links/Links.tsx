@@ -18,7 +18,15 @@ function Links() {
     });
     return (
       linkUpdated.status === 200 &&
-      setLinksLists(linksList.filter((link) => link.id !== id))
+      setLinksLists(
+        linksList.map((link) => {
+          const newLink = link;
+          if (link.id === id) {
+            newLink.active = data.active;
+          }
+          return link;
+        })
+      )
     );
   };
 
@@ -28,10 +36,15 @@ function Links() {
 
   return (
     <div className="links">
-      <h1>My Links</h1>
-      <NavLink className="links__newLink neumOutset" to="/admin/links/newLink">
-        Add new link
-      </NavLink>
+      <div className="links__header">
+        <h1>My Links</h1>
+        <NavLink
+          className="links__newLink neumOutset"
+          to="/admin/links/newLink"
+        >
+          Add new link
+        </NavLink>
+      </div>
       {linksList &&
         linksList.map((link) => (
           <Link key={link.id} {...link} onUpdate={updateLink} />

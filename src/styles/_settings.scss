@@ -7,6 +7,8 @@
   --primary-light: #8abdff;
   --primary: #6d5dfc;
   --primary-dark: #5b0eeb;
+  --error-red: rgb(217, 82, 82);
+  --valid-green: rgb(105, 202, 105);
 
   --white: #ffffff;
   --greyLight-1: #e4ebf5;
@@ -62,4 +64,19 @@ h1 {
   font-family: "Montserrat", sans-serif;
   color: $color-shadow;
   text-shadow: 1px 1px 1px $color-white;
+}
+
+li {
+  list-style: none;
+}
+a {
+  color: var(--greyDark);
+  text-decoration: none;
+}
+
+.errorBg {
+  background-color: var(--error-red);
+}
+.validBg {
+  background-color: var(--valid-green);
 }
