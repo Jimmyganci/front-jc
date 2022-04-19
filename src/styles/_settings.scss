@@ -63,3 +63,11 @@ h1 {
   color: $color-shadow;
   text-shadow: 1px 1px 1px $color-white;
 }
+
+li {
+  list-style: none;
+}
+a {
+  color: var(--greyDark);
+  text-decoration: none;
+}
