@@ -46,7 +46,10 @@ function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
           {active ? "ON" : "OFF"}
         </button>
         <div>
-          <NavLink className="link__edit neumOutset" to={`/admin/links/${id}`}>
+          <NavLink
+            className="link__edit neumOutset"
+            to={`/admin/links/editLink/${id}`}
+          >
             Edit
           </NavLink>
         </div>
