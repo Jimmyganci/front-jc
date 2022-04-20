@@ -5,7 +5,6 @@ const API_URL = import.meta.env.DEV
   ? "http://localhost:1234"
   : "https://api-jc.herokuapp.com";
 const API_KEY = import.meta.env.VITE_API_KEY;
-console.log(API_URL);
 
 export const auth = {
   loggedIn: ({ email, password }: TypeInputLogin): Promise<TypeInputLogin> =>
@@ -27,6 +26,10 @@ export const auth = {
 export const links = {
   getAllLinks: (): Promise<TypeLink[]> =>
     axios.get(`${API_URL}/links?API_KEY=${API_KEY}`).then((res) => res.data),
+  getOneLink: (id: number): Promise<TypeLink> =>
+    axios
+      .get(`${API_URL}/links/${id}?API_KEY=${API_KEY}`)
+      .then((res) => res.data),
   updateLink: (id: number, data: TypeLink) =>
     axios
       .put(`${API_URL}/links/${id}?API_KEY=${API_KEY}`, { ...data })
@@ -34,6 +37,10 @@ export const links = {
   createLink: (data: TypeLink) =>
     axios
       .post(`${API_URL}/links?API_KEY=${API_KEY}`, { ...data })
+      .then((res) => res),
+  deleteLink: (id: number) =>
+    axios
+      .delete(`${API_URL}/links/${id}?API_KEY=${API_KEY}`)
       .then((res) => res),
 };
 

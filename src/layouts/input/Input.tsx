@@ -7,7 +7,8 @@ function Input({
   required,
   register,
   selectData,
-}: TypeInput) {
+}: //   defaultValue,
+TypeInput) {
   return (
     // include validation with required or other standard HTML validation rules
     <div className="inputMap">
