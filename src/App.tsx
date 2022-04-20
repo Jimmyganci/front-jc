@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Dispatch from "./dispatch/Dispatch";
 import Home from "./home/Home";
-import CreateLink from "./links/CreateLink";
-import EditLink from "./links/EditLink";
+import CreateLink from "./links/createLink/CreateLink";
+import EditLink from "./links/editLink/EditLink";
 import Links from "./links/Links";
 import LandingPage from "./login/LandingPage";
 import "./styles/_app.scss";

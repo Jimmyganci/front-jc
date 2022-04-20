@@ -1,0 +1,18 @@
+.createLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  h1 {
+    margin-bottom: 2em;
+  }
+  .createLink__form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
