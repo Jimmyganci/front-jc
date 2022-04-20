@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { NavigateFunction, useNavigate, useParams } from "react-router-dom";
-import { links, themes } from "../api/requests";
-import Button from "../layouts/button/Button";
-import Form from "../layouts/form/Form";
-import { TypeLink, TypeTheme } from "../types/types";
+import { links, themes } from "../../api/requests";
+import Button from "../../layouts/button/Button";
+import Form from "../../layouts/form/Form";
+import { TypeLink, TypeTheme } from "../../types/types";
 // import { TypeLink } from "../types/types";
-import formLink from "./linkData";
+import formLink from "../linkData";
 
 function EditLink() {
   const { id } = useParams();
@@ -41,7 +41,7 @@ function EditLink() {
       {linkData && (
         //   cf component Form to have any explanation about this component
         <Form
-          className="createLink"
+          className="editLink__form"
           onSubmitRequest={links.updateLink}
           defaultValues={linkData}
           idParams={id}
