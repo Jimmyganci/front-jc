@@ -1,0 +1,16 @@
+.editLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  h1 {
+    margin-bottom: 2em;
+  }
+  button {
+    margin-top: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}

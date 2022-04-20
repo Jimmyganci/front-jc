@@ -3,13 +3,24 @@ import { Link } from "react-router-dom";
 function Button({
   name,
   urlDestination,
+  type,
+  className,
+  onClick,
 }: {
   name: string;
-  urlDestination: string;
+  urlDestination?: string;
+  type: "button" | "submit" | "reset";
+  className?: string;
+  onClick?: () => {};
 }) {
   return (
-    <button type="button" className="neumOutset">
-      <Link to={urlDestination}>{name}</Link>
+    <button
+      onClick={() => onClick && onClick()}
+      type={type === "submit" ? "submit" : "button"}
+      className={className}
+    >
+      {urlDestination && <Link to={urlDestination || ""}>{name}</Link>}
+      {!urlDestination && name}
     </button>
   );
 }

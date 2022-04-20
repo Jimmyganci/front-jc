@@ -77,6 +77,12 @@ a {
 .errorBg {
   background-color: var(--error-red);
 }
+.errorTxt {
+  color: red;
+}
 .validBg {
   background-color: var(--valid-green);
+}
+.validTxt {
+  color: green;
 }
