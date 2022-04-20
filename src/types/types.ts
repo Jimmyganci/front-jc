@@ -31,4 +31,5 @@ export type TypeLink = {
 export type TypeTheme = {
   id: number;
   name: string;
+  active: boolean;
 };

@@ -25,7 +25,7 @@ function EditLink() {
     setThemesData(allThemes);
   };
 
-  // delete link with id in the params
+  // delete theme with id in the params
   const deleteLink = async () => {
     const deletedLink = await links.deleteLink(Number(id));
     return deletedLink.status === 200 && navigate("/admin/links/");
