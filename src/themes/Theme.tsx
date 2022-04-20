@@ -1,30 +1,26 @@
 import { Suspense } from "react";
 import { NavLink } from "react-router-dom";
-import { TypeLink } from "../types/types";
+import { TypeTheme } from "../types/types";
 
 type LinkProps = {
   id: number;
-  title: string;
-  url: string;
-  idTheme: number;
-  onUpdate: (id: number, data: TypeLink) => {};
+  name: string;
+  onUpdate: (id: number, data: TypeTheme) => {};
   active: boolean;
 };
 
-function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
+function Theme({ id, name, active, onUpdate }: LinkProps) {
   return (
     <Suspense fallback="Wait">
       <div key={id} className="link neumInset">
         <p>{id}</p>
-        <p>{title}</p>
+        <p>{name}</p>
         <div className="link__buttons">
           <button
             onClick={() =>
               onUpdate(id, {
                 id,
-                title,
-                url,
-                idTheme,
+                name,
                 active: !active,
               })
             }
@@ -36,7 +32,7 @@ function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
           <div>
             <NavLink
               className="link__edit neumOutset"
-              to={`/admin/links/editLink/${id}`}
+              to={`/admin/themes/editTheme/${id}`}
             >
               Edit
             </NavLink>
@@ -47,4 +43,4 @@ function Link({ id, title, url, idTheme, onUpdate, active }: LinkProps) {
   );
 }
 
-export default Link;
+export default Theme;

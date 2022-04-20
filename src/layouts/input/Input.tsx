@@ -23,7 +23,7 @@ TypeInput) {
       )}
       {type === "select" && (
         <select
-          className="select"
+          className="select neumOutset"
           name={name}
           {...register(name as any, { required })}
         >

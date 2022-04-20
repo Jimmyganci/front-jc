@@ -51,6 +51,18 @@ export const themes = {
     axios
       .get(`${API_URL}/themes/${idTheme}?API_KEY=${API_KEY}`)
       .then((res) => res.data),
+  createTheme: (data: TypeTheme) =>
+    axios
+      .post(`${API_URL}/themes?API_KEY=${API_KEY}`, { ...data })
+      .then((res) => res),
+  updateTheme: (id: number, data: TypeTheme) =>
+    axios
+      .put(`${API_URL}/themes/${id}?API_KEY=${API_KEY}`, { ...data })
+      .then((res: any) => res),
+  deleteTheme: (id: number) =>
+    axios
+      .delete(`${API_URL}/themes/${id}?API_KEY=${API_KEY}`)
+      .then((res) => res),
 };
 
 export default API_URL;

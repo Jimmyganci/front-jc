@@ -39,9 +39,6 @@ $color-white: #fff;
   border-radius: 0.6rem;
   box-shadow: $shadow;
   justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: 0.3s ease;
   border: none;
@@ -72,6 +69,11 @@ li {
 a {
   color: var(--greyDark);
   text-decoration: none;
+}
+
+.select {
+  padding: 1em;
+  text-align: center;
 }
 
 .errorBg {

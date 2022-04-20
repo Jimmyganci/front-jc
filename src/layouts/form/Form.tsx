@@ -25,6 +25,7 @@ function Form({
   idParams,
   urlDestination,
   defaultValues,
+  children,
 }: {
   dataForm: TypeData;
   className: string;
@@ -32,7 +33,8 @@ function Form({
   onSubmitRequest: any;
   idParams?: string;
   urlDestination: string;
-  defaultValues?: TypeLink;
+  defaultValues?: TypeLink | TypeTheme;
+  children?: any;
 }) {
   const {
     register,
@@ -69,6 +71,7 @@ function Form({
           )}
         </div>
       ))}
+      {children}
 
       <input className="form__btn" type="submit" />
     </form>
