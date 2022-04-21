@@ -33,14 +33,8 @@ export const auth = {
 
 export const links = {
   getAllLinks: (): Promise<TypeLink[]> =>
-    toast.promise(
-      axios.get(`${API_URL}/links?API_KEY=${API_KEY}`).then((res) => res.data),
-      {
-        pending: "Loading",
-        success: "All links loaded 👌",
-        error: "Error 🤯",
-      }
-    ),
+    axios.get(`${API_URL}/links?API_KEY=${API_KEY}`).then((res) => res.data),
+
   getOneLink: (id: number): Promise<TypeLink> =>
     axios
       .get(`${API_URL}/links/${id}?API_KEY=${API_KEY}`)
@@ -82,14 +76,7 @@ export const links = {
 
 export const themes = {
   getAllThemes: (): Promise<TypeTheme[]> =>
-    toast.promise(
-      axios.get(`${API_URL}/themes?API_KEY=${API_KEY}`).then((res) => res.data),
-      {
-        pending: "Loading",
-        success: "All themes loaded👌",
-        error: "Error 🤯",
-      }
-    ),
+    axios.get(`${API_URL}/themes?API_KEY=${API_KEY}`).then((res) => res.data),
   getOneTheme: (idTheme: number): Promise<TypeTheme> =>
     axios
       .get(`${API_URL}/themes/${idTheme}?API_KEY=${API_KEY}`)
