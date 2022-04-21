@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Dispatch from "./dispatch/Dispatch";
 import Home from "./home/Home";
 import CreateLink from "./links/createLink/CreateLink";
@@ -9,10 +10,12 @@ import "./styles/_app.scss";
 import CreateTheme from "./themes/CreateTheme";
 import EditTheme from "./themes/EditTheme";
 import Themes from "./themes/Themes";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="relative">
+      <ToastContainer position="top-center" autoClose={500} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/admin" element={<Dispatch />}>
