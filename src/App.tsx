@@ -11,6 +11,9 @@ import CreateTheme from "./themes/CreateTheme";
 import EditTheme from "./themes/EditTheme";
 import Themes from "./themes/Themes";
 import "react-toastify/dist/ReactToastify.css";
+import Users from "./users/Users";
+import EditUser from "./users/editUser/EditUser";
+import CreateUser from "./users/createUser/CreateUser";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
           <Route path="themes" element={<Themes />} />
           <Route path="themes/newTheme" element={<CreateTheme />} />
           <Route path="themes/editTheme/:id" element={<EditTheme />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/editUser/:id" element={<EditUser />} />
+          <Route path="users/newUser" element={<CreateUser />} />
         </Route>
       </Routes>
     </div>

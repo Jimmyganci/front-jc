@@ -6,6 +6,7 @@ import {
   TypeInputLogin,
   TypeLink,
   TypeTheme,
+  TypeUser,
 } from "../../types/types";
 import Input from "../input/Input";
 
@@ -33,13 +34,14 @@ function Form({
   onSubmitRequest: any;
   idParams?: string;
   urlDestination: string;
-  defaultValues?: TypeLink | TypeTheme;
+  defaultValues?: TypeLink | TypeTheme | TypeUser;
   children?: any;
 }) {
   const {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm<TypeForm | TypeLink>({ defaultValues });
 
@@ -51,6 +53,16 @@ function Form({
     );
   };
 
+  function convertToObj(key: any, value: any) {
+    if (key.length !== value.length || key.length === 0 || value.length === 0) {
+      return null;
+    }
+    return value.map((val: any, index: number) => ({
+      ...val,
+      value: key[index],
+    }));
+  }
+
   useEffect(() => {
     reset(defaultValues);
   }, [defaultValues]);
@@ -61,13 +73,18 @@ function Form({
       {dataForm.map((form) => (
         <div className="form__inputContainer" key={form.name}>
           <Input
+            watch={watch}
             {...form}
             selectData={dataSelect.length && dataSelect}
             register={register}
           />
           {/* errors will return when field validation fails with the keys of object errors compared to the name  */}
           {Object.keys(errors).includes(form.name) && (
-            <p className="form__inputContainer--error">{form.messageError}</p>
+            <p className="form__inputContainer--error">
+              {convertToObj(Object.keys(errors), Object.values(errors)).map(
+                (error: any) => error.value === form.name && error.message
+              )}
+            </p>
           )}
         </div>
       ))}
