@@ -11,7 +11,7 @@ function Button({
   urlDestination?: string;
   type: "button" | "submit" | "reset";
   className?: string;
-  onClick?: () => {};
+  onClick?: () => void;
 }) {
   return (
     <button
