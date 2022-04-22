@@ -13,6 +13,9 @@ function NavBar() {
         <li>
           <Link to="/admin/themes">Themes</Link>
         </li>
+        <li>
+          <Link to="/admin/users">Users</Link>
+        </li>
       </ul>
     </nav>
   );

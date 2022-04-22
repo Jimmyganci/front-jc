@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { TypeInputLogin, TypeLink, TypeTheme } from "../types/types";
+import { TypeInputLogin, TypeLink, TypeTheme, TypeUser } from "../types/types";
 
 const API_URL = import.meta.env.DEV
   ? "http://localhost:1234"
@@ -111,6 +111,56 @@ export const themes = {
       {
         pending: "Loading",
         success: "Theme deleted 👌",
+        error: "Error 🤯",
+      }
+    ),
+};
+
+export const users = {
+  getAllUsers: (): Promise<TypeUser[]> =>
+    axios.get(`${API_URL}/users?API_KEY=${API_KEY}`).then((res) => res.data),
+  getOneUser: (id: number): Promise<TypeUser> =>
+    axios
+      .get(`${API_URL}/users/${id}?API_KEY=${API_KEY}`)
+      .then((res) => res.data),
+  createUser: (data: {
+    email: string;
+    password: string;
+    newPassword: string;
+  }) =>
+    toast.promise(
+      axios
+        .post(`${API_URL}/users?API_KEY=${API_KEY}`, {
+          email: data.email,
+          password: data.password,
+        })
+        .then((res) => res),
+      {
+        pending: "Loading",
+        success: "User created 👌",
+        error: "Error 🤯",
+      }
+    ),
+
+  updateUser: (id: number, data: TypeUser) =>
+    toast.promise(
+      axios
+        .put(`${API_URL}/users/${id}?API_KEY=${API_KEY}`, { ...data })
+        .then((res: any) => res),
+      {
+        pending: "Loading",
+        success: "User updated 👌",
+        error: "Error 🤯",
+      }
+    ),
+  deleteUser: (id: number) =>
+    toast.promise(
+      axios
+        .delete(`${API_URL}/users/${id}?API_KEY=${API_KEY}`)
+        .then((res) => res),
+      {
+        pending: "Loading",
+        success: "User deleted 👌",
         error: "Error 🤯",
       }
     ),

@@ -4,6 +4,7 @@ function Input({
   type,
   placeHolder,
   name,
+  watch,
   required,
   register,
   selectData,
@@ -16,9 +17,17 @@ TypeInput) {
         <input
           autoComplete="off"
           type={type}
+          name={name}
           className="input neumInset"
           placeholder={placeHolder}
-          {...register(name as any, { required })}
+          {...register(name as any, {
+            required: `${name} is required!`,
+            validate:
+              name === "newPassword"
+                ? (val: string) =>
+                    watch("password") === val || `Password fields don't match`
+                : "",
+          })}
         />
       )}
       {type === "select" && (

@@ -18,6 +18,7 @@ export type TypeInput = {
   required: boolean;
   register: any;
   selectData: any;
+  watch: any;
 };
 
 export type TypeLink = {
@@ -31,5 +32,12 @@ export type TypeLink = {
 export type TypeTheme = {
   id: number;
   name: string;
+  active: boolean;
+};
+
+export type TypeUser = {
+  id: number;
+  email: string;
+  password: string;
   active: boolean;
 };
