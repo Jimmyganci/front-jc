@@ -29,7 +29,7 @@ function CreateLink() {
         <Button
           type="button"
           name="Add new theme"
-          urlDestination="/admin/themes/createTheme"
+          urlDestination="/admin/themes/newTheme"
           className="createLink__form--btn"
         />
       </Form>
