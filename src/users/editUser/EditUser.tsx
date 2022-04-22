@@ -35,7 +35,7 @@ function EditUser() {
         <Form
           className="editLink__form"
           onSubmitRequest={users.updateUser}
-          defaultValues={{ ...userData, password: "" }}
+          defaultValues={userData}
           idParams={id}
           dataForm={showPassword ? formUser : [formUser[0]]}
           urlDestination="/admin/users"
