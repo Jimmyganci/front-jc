@@ -20,6 +20,20 @@ const formUser = [
     messageError: "Confirm your password!",
     placeHolder: "Your confirm password",
   },
+  {
+    name: "firstname",
+    type: "text",
+    required: true,
+    messageError: "Firstname is required!",
+    placeHolder: "Your firstname",
+  },
+  {
+    name: "lastname",
+    type: "text",
+    required: true,
+    messageError: "Lastname is required!",
+    placeHolder: "Your lastname",
+  },
 ];
 
 export default formUser;

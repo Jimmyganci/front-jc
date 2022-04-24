@@ -40,4 +40,7 @@ export type TypeUser = {
   email: string;
   password: string;
   active: boolean;
+  firstname: string;
+  lastname: string;
+  admin: boolean;
 };

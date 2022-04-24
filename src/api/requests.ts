@@ -29,6 +29,27 @@ export const auth = {
         error: "Error 🤯",
       }
     ),
+  checkToken: () =>
+    axios
+      .get(`${API_URL}/token?API_KEY=${API_KEY}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      .then((res) => res)
+      .catch((err) => err),
+  logout: () =>
+    axios
+      .delete(`${API_URL}/logout?API_KEY=${API_KEY}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      })
+      .then((res) => res),
 };
 
 export const links = {
@@ -123,16 +144,11 @@ export const users = {
     axios
       .get(`${API_URL}/users/${id}?API_KEY=${API_KEY}`)
       .then((res) => res.data),
-  createUser: (data: {
-    email: string;
-    password: string;
-    newPassword: string;
-  }) =>
+  createUser: (data: TypeUser) =>
     toast.promise(
       axios
         .post(`${API_URL}/users?API_KEY=${API_KEY}`, {
-          email: data.email,
-          password: data.password,
+          ...data,
         })
         .then((res) => res),
       {
