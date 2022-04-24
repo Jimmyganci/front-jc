@@ -37,7 +37,14 @@ function EditUser() {
           onSubmitRequest={users.updateUser}
           defaultValues={userData}
           idParams={id}
-          dataForm={showPassword ? formUser : [formUser[0]]}
+          dataForm={
+            showPassword
+              ? formUser
+              : formUser.filter(
+                  (user) =>
+                    user.name !== "password" && user.name !== "newPassword"
+                )
+          }
           urlDestination="/admin/users"
         >
           <Button

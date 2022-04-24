@@ -20,11 +20,11 @@ function Users() {
       userUpdated.status === 200 &&
       setUsersList(
         usersList.map((user) => {
-          const newUser = user;
+          let newUser = user;
           if (user.id === id) {
-            newUser.active = data.active;
+            newUser = data;
           }
-          return user;
+          return newUser;
         })
       )
     );

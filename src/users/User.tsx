@@ -8,9 +8,21 @@ type UserProps = {
   password: string;
   onUpdate: (id: number, data: TypeUser) => {};
   active: boolean;
+  firstname: string;
+  lastname: string;
+  admin: boolean;
 };
 
-function User({ id, email, password, active, onUpdate }: UserProps) {
+function User({
+  id,
+  email,
+  password,
+  active,
+  firstname,
+  lastname,
+  onUpdate,
+  admin,
+}: UserProps) {
   return (
     <Suspense fallback="Wait">
       <div key={id} className="link neumInset">
@@ -24,12 +36,32 @@ function User({ id, email, password, active, onUpdate }: UserProps) {
                 email,
                 password,
                 active: !active,
+                firstname,
+                lastname,
+                admin,
               })
             }
             type="button"
             className={`neumOutset ${active ? "validBg" : "errorBg"}`}
           >
             {active ? "ON" : "OFF"}
+          </button>
+          <button
+            onClick={() =>
+              onUpdate(id, {
+                id,
+                email,
+                password,
+                firstname,
+                active,
+                lastname,
+                admin: !admin,
+              })
+            }
+            type="button"
+            className={`neumOutset ${admin ? "validBg" : "errorBg"}`}
+          >
+            {admin ? "Admin" : "User"}
           </button>
           <div>
             <NavLink
